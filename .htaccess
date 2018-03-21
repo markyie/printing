@@ -144,6 +144,17 @@ AddDefaultCharset utf-8
     RewriteEngine On
     Options +FollowSymlinks
 
+    # BEGIN - additional from harviacode
+    RewriteCond %{REQUEST_URI} ^system.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    RewriteCond %{REQUEST_URI} ^application.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    RewriteCond %{REQUEST_URI} ^asset.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+    # END - additional from harviacode
+
     # - - - Use for 1and1 - - -
     # RewriteBase / 
 
